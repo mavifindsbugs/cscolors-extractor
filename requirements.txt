@@ -1,0 +1,6 @@
+requests
+colorthief
+webcolors
+supabase
+tqdm
+rich

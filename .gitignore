@@ -1,0 +1,7 @@
+.idea
+.vscode
+/venv
+*.code-workspace
+**/__pycache__
+skins.json
+stickers.json
