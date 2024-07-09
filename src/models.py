@@ -21,7 +21,42 @@ class Color(object):
 
     def __str__(self):
         return f"{self.name} {self.count}"
+    
+@dataclass
+class Collection(object):
+    id: str = None
+    name: str = None
+    image: str = None
 
+    def from_dict(self, dic):
+        if dic is not None:
+            for key, value in dic.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
+    def __hash__(self):
+        return hash(self.name)
+
+    def __str__(self):
+        return f"{self.name} {self.image}"
+
+@dataclass
+class Crate(object):
+    id: str = None
+    name: str = None
+    image: str = None
+
+    def from_dict(self, dic):
+        if dic is not None:
+            for key, value in dic.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
+    def __hash__(self):
+        return hash(self.name)
+
+    def __str__(self):
+        return f"{self.name} {self.image}"
 
 @dataclass
 class Item(object):
@@ -35,8 +70,12 @@ class Item(object):
     max_float: int = None
     rarity: str = None
     stattrak: bool = None
+    souvenir: bool = None
     paint_index: str = None
     image: str = None
+
+    collections: List[str] = None
+    crates: List[str] = None
 
     colors: List[Color] = None
     base_colors: List[str] = None
