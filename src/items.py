@@ -52,7 +52,7 @@ def get_items(url: str) -> List[Item]:
     return items_objs
 
 
-def process_items(url: str, count: int = -1, poolsize: int = 10, skip_colors: bool = False):
+def process_items(url: str, count: int = -1, poolsize: int = 10, skip_colors: bool = False, filename: str = "items.json"):
     items = get_items(url)
     if count != -1:
         items = items[:count]
@@ -74,6 +74,10 @@ def process_items(url: str, count: int = -1, poolsize: int = 10, skip_colors: bo
     result = []
     for pi in processed_items:
         result.extend(pi)
+
+    with open(filename, "w") as file:
+        items = sorted(result, key=lambda item: item['name'].lower())
+        file.write(json.dumps(items))
 
     return result
 

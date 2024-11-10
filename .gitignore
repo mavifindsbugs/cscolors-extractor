@@ -5,3 +5,4 @@
 **/__pycache__
 skins.json
 stickers.json
+.env

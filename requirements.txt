@@ -1,6 +1,8 @@
-requests
-colorthief
-webcolors
-supabase
-tqdm
-rich
+requests~=2.32.3
+colorthief~=0.2.1
+webcolors~=24.6.0
+supabase~=2.5.1
+tqdm~=4.66.4
+rich~=13.7.1
+postgrest~=0.16.8
+python-dotenv~=1.0.1

@@ -21,7 +21,8 @@ class Color(object):
 
     def __str__(self):
         return f"{self.name} {self.count}"
-    
+
+
 @dataclass
 class Collection(object):
     id: str = None
@@ -40,6 +41,7 @@ class Collection(object):
     def __str__(self):
         return f"{self.name} {self.image}"
 
+
 @dataclass
 class Crate(object):
     id: str = None
@@ -57,6 +59,7 @@ class Crate(object):
 
     def __str__(self):
         return f"{self.name} {self.image}"
+
 
 @dataclass
 class Item(object):
